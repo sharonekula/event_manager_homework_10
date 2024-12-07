@@ -263,3 +263,28 @@ def user_response_data():
 @pytest.fixture
 def login_request_data():
     return {"username": "john_doe_123","email":"john.doe.new@example.com", "password": "SecurePassword123!"}
+
+authenticateduser = {
+    "sub" : "Authenticated_user",
+    "role" : UserRole.AUTHENTICATED 
+}
+
+@pytest.fixture
+def user_token():
+    return create_access_token(data=authenticateduser)
+
+@pytest.fixture
+def manager_token():
+    manager = {
+        "sub": "Manager",
+        "role" : UserRole.MANAGER
+    }
+    return create_access_token(data=manager)
+
+@pytest.fixture
+def admin_token():
+    admin = {
+        "sub": "Manager",
+        "role" : UserRole.ADMIN
+    }
+    return create_access_token(data=admin)
