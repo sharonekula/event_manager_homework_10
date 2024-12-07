@@ -217,6 +217,7 @@ def user_base_data():
     return {
         "username": "john_doe_123",
         "email": "john.doe@example.com",
+        "nickname" : "JohnD",
         "full_name": "John Doe",
         "bio": "I am a software engineer with over 5 years of experience.",
         "profile_picture_url": "https://example.com/profile_pictures/john_doe.jpg"
@@ -240,6 +241,7 @@ def user_create_data(user_base_data):
 @pytest.fixture
 def user_update_data():
     return {
+        "first_name" : "John",
         "email": "john.doe.new@example.com",
         "full_name": "John H. Doe",
         "bio": "I specialize in backend development with Python and Node.js.",
